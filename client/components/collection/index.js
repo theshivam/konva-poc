@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import GridCell from "./GridCell";
 import * as actions from "../actions";
 
-// import "./css/styles.css";
 const Loader = () => {
   return (
     <div className="post-loader">
@@ -21,7 +20,7 @@ class Home extends Component {
   MODEL_CLOSE = null;
   CLICKED_CORDS = null;
   state = {
-    GRID_WIDTH: 1000,
+    GRID_WIDTH: 1500,
     GRID_WIDTH_X: 2000,
     GRID_WIDTH_Y: 1000,
     LINES_A: [],
@@ -30,15 +29,6 @@ class Home extends Component {
     loading: 0
   };
 
-  loadRectanlges = async range => {
-    console.log("API Call Started !");
-    const response = await fetch(
-      `http://upcalibrebackend.herokuapp.com/api/poc/new/grid/${range}/${range}`
-    );
-    const data = await response.json();
-    console.log("API Call Ended !");
-    return data;
-  };
   drawGridLines() {
     this.setState({ loading: 1 });
     const linesA = [],
@@ -71,15 +61,6 @@ class Home extends Component {
         this.setState({ loading: 0 });
       }
     );
-    //  this.loadRectanlges(loadedBlocks)
-    //      .then(rects=>{
-    //         this.setState((preState)=>({
-    //           LINES_A: [...preState.LINES_A, ...linesA],
-    //           LINES_B: [...preState.LINES_B, ...linesB],
-    //           Rectangels: [...preState.Rectangels, ...rects],
-    //           loading:0
-    //         }));
-    //      })
   }
 
   componentDidMount() {
