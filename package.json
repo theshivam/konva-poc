@@ -1,0 +1,48 @@
+{
+  "name": "dev",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/server.generated.js",
+  "scripts": {
+    "dev": "nodemon",
+    "build": "webpack --config webpack.config.client.production.js && webpack --mode=production --config webpack.config.server.js",
+    "start": "NODE_ENV=production node ./dist/server.generated.js"
+  },
+  "engines": {
+    "node": "12.16.x",
+    "npm": "6.x"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "konva": "^7.1.9",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-konva": "^17.0.0-0",
+    "react-router-dom": "^5.2.0",
+    "axios": "^0.21.0",
+    "react-redux": "^7.2.2",
+    "redis": "^3.0.2",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.7",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/preset-env": "^7.12.7",
+    "@babel/preset-react": "^7.12.7",
+    "babel-loader": "^8.2.1",
+    "css-loader": "^5.0.1",
+    "react-hot-loader": "^4.13.0",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.6.0",
+    "webpack-cli": "^4.2.0",
+    "webpack-dev-middleware": "^4.0.2",
+    "webpack-hot-middleware": "^2.25.0",
+    "webpack-node-externals": "^2.5.2"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
